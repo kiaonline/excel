@@ -66,9 +66,9 @@ class Excel{
             foreach($row as $col_index => $value){
                 $isNum  = ctype_digit($value);
                 if($isNum){
-                    $str .= $this->colNumber($row_index, $col_index, $value);
+                    $str .= $this->colNumber($row_index, $col_index, utf8_decode($value));
                 }else{
-                    $str .= $this->colString($row_index, $col_index, $value);
+                    $str .= $this->colString($row_index, $col_index, utf8_decode($value));
                 }
             }
 
