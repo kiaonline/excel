@@ -64,7 +64,7 @@ class Excel{
         foreach($this->data as $row_index => $row){
 
             foreach($row as $col_index => $value){
-                $isNum  = ctype_digit($value);
+                $isNum  = is_numeric($value);
                 if($isNum){
                     $str .= $this->colNumber($row_index, $col_index, utf8_decode($value));
                 }else{
